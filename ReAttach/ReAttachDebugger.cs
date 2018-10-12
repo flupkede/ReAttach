@@ -163,7 +163,7 @@ namespace ReAttach
 			List<Process3> candidates;
 			if (!target.IsLocal)
 			{
-				var transport = _dteDebugger.Transports.Item("Default");
+                var transport = _dteDebugger.Transports.Item("Remote (no authentication)");//("Default");
 				var processes = _dteDebugger.GetProcesses(transport, target.ServerName).OfType<Process3>();
 				candidates = processes.Where(p => ReAttachProcessComparer.CompareRemoteProcess(p, target)).ToList();
 			}
