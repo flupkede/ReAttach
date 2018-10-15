@@ -163,6 +163,7 @@ namespace ReAttach
 			List<Process3> candidates;
 			if (!target.IsLocal)
 			{
+                // Updated default to no authentication to attach easily on anonymous docker container Remote debugger
                 var transport = _dteDebugger.Transports.Item("Remote (no authentication)");//("Default");
 				var processes = _dteDebugger.GetProcesses(transport, target.ServerName).OfType<Process3>();
 				candidates = processes.Where(p => ReAttachProcessComparer.CompareRemoteProcess(p, target)).ToList();

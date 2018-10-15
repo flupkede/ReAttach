@@ -1,4 +1,7 @@
-﻿
+﻿Version 2.1.1
+Bugfixes
+* Remote (no authentication) support.
+
 Version 2.1
 =============================================
 * Bugfixes
